@@ -9,6 +9,13 @@ fs.readFile('w_data.dat', 'utf-8', (err, data) => {
         return el.split(/\s+/)
     });
 
+    // Get rid of first four elements to easily access headers
+    cells.splice(0, 4);
+
+    // Remove last two elements
+    cells.pop();
+    cells.pop();
+
     // Get first array from cells which will be our Headers
     const headers = cells.shift();
 

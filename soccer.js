@@ -8,7 +8,12 @@ fs.readFile('soccer.dat', 'utf-8', (err, data) => {
     const cells = data.split('\n').map((el) => {
         return el.split(/\s+/)
     });
-    // Pop empty element from cells
+
+    // Get rid of first two elements to easily access headers
+    cells.splice(0, 2);
+
+    // Delete last two elements which include </prev> tag and white space
+    cells.pop();
     cells.pop();
 
     // Get first array from cells which will be our Headers
