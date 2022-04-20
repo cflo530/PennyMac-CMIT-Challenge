@@ -39,7 +39,7 @@ fs.readFile('w_data.dat', 'utf-8', (err, data) => {
 
     // Fill up spreads with Dy as key and spread as value
     for(let i = 1; i < obj.length - 1; i++) {
-        spreads[obj[i].Dy] = obj[i].MxT - obj[i].MnT;
+        spreads[obj[i].Dy] = Math.abs(obj[i].MxT - obj[i].MnT);
     }
 
     // Get minimum value from all spreads
